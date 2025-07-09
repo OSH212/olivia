@@ -98,7 +98,7 @@
 
 4. **Start the development server**
    ```bash
-   pnpm dev
+   npn run dev
    ```
 
 5. **Open your browser**
@@ -177,3 +177,5 @@ This project showcases modern AI application development practices:
 ---
 
 **Built for the Olivia AI coding challenge** - Demonstrating expertise in AI application development, modern web technologies, and user experience design.
+
+Originally used vercel-ai-chatbot: https://github.com/supabase-community/vercel-ai-chatbot
