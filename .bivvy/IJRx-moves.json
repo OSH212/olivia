@@ -1,0 +1,59 @@
+{
+  "climb": "IJRx",
+  "moves": [
+    {
+      "status": "complete",
+      "description": "Install new dependencies and remove old ones",
+      "details": "Run 'pnpm remove openai-edge' and 'pnpm add @openrouter/ai-sdk-provider'."
+    },
+    {
+      "status": "complete",
+      "description": "Disable Authentication Requirement",
+      "details": "Modify middleware.ts to remove the redirection for unauthenticated users. Remove user-related UI components like LoginButton and UserMenu from the header/sidebar.",
+      "rest": true
+    },
+    {
+      "status": "complete",
+      "description": "Refactor Chat API Route (Part 1: Core Logic)",
+      "details": "Modify app/api/chat/route.ts. Remove the user authentication check. Change the API call from openai-edge to use streamText with the OpenRouter provider from @openrouter/ai-sdk-provider. Initially, a hardcoded OpenRouter key from env vars can be used for testing.",
+      "rest": true
+    },
+    {
+      "status": "complete",
+      "description": "Update Frontend for API Key and Persona",
+      "details": "In components/chat.tsx, modify the existing API key dialog to always be active and for OpenRouter keys. Add a new UI element (e.g., a Select from shadcn/ui) for persona selection. Store both the key and persona in local storage and add them to the body of the useChat hook's requests."
+    },
+    {
+      "status": "complete",
+      "description": "Refactor Chat API Route (Part 2: Dynamic Keys & Personas)",
+      "details": "Update app/api/chat/route.ts to receive the API key and persona from the request body. Use the user-provided key to initialize the OpenRouter client. Implement the logic to use the correct system prompt based on the selected persona."
+    },
+    {
+      "status": "complete",
+      "description": "Fix Chat History Persistence",
+      "details": "The chat history in the sidebar does not update when a new chat is started. This needs to be fixed. The chat ID should be stored in local storage and used to fetch the chat history.",
+      "rest": true
+    },
+    {
+      "status": "complete",
+      "description": "Add New Chat Personas",
+      "details": "Add the 'Donald Trump', 'The Oracle', 'The Fuck Boy', and 'Astrology Girl' personas to the persona selection dropdown and update the API to handle them."
+    },
+    {
+      "status": "complete",
+      "description": "UI Overhaul: Implement Futuristic Chatbot Design",
+      "details": "Refactor the entire UI to match the provided 'FuturisticChatbot' component. This includes creating a new main chat component, integrating useChat hook, updating sidebar logic, implementing new model/persona selectors, and wiring up dark mode.",
+      "rest": true
+    },
+    {
+      "status": "climbing",
+      "description": "Clean up unused code and files",
+      "details": "Remove or comment out old UI components (Header, Chat, ChatList, ChatMessage, etc.) and related files made obsolete by the new UI."
+    },
+    {
+      "status": "todo",
+      "description": "Final review and testing",
+      "details": "Perform a final end-to-end test of the chat functionality, including session persistence, persona switching, and API key handling."
+    }
+  ]
+}

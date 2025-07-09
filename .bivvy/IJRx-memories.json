@@ -1,0 +1,10 @@
+{
+  "memories": [
+    {
+      "id": "getChats-anonymous-temp-fix",
+      "timestamp": "{{timestamp}}",
+      "content": "In 'app/actions.ts', the 'getChats' function was temporarily modified to return an empty array when the userId is 'anonymous' or null. This was done to prevent UI crashes while the full anonymous chat history logic (likely using local storage to store chat IDs) is implemented. This needs to be revisited and replaced with a proper implementation for loading anonymous user chats.",
+      "status": "pending"
+    }
+  ]
+}
